@@ -14,5 +14,5 @@ FOUNDATION_EXPORT double DemoWebViewSDKVersionNumber;
 FOUNDATION_EXPORT const unsigned char DemoWebViewSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <DemoWebViewSDK/PublicHeader.h>
-
+#import <DemoWebViewSDK/MTDController.h>
 
