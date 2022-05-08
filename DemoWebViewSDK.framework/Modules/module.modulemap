@@ -1,0 +1,6 @@
+framework module DemoWebViewSDK {
+  umbrella header "DemoWebViewSDK.h"
+
+  export *
+  module * { export * }
+}
