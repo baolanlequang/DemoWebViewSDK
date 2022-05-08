@@ -47,7 +47,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/baolanlequang/jcamp-converter-ios.git", :tag => "#{spec.version}" }
+  spec.source       = { :http => "https://github.com/baolanlequang/DemoSDK/blob/master/DemoWebViewSDK.zip" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -58,7 +58,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "JcampConverter/JcampConverter/*.{h,m,swift}", "JcampConverter/JcampConverter/Utils/*.{h,m,swift}"
+  spec.source_files  = "MTDController.h", "DemoWebViewSDK.h"
   spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -74,6 +74,7 @@ Pod::Spec.new do |spec|
 
   # spec.resource  = "icon.png"
   # spec.resources = "Resources/*.png"
+    spec.ios.vendored_frameworks = 'DemoWebViewSDK.framework'
 
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
