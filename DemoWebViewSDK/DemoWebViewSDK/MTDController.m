@@ -7,6 +7,7 @@
 
 #import "MTDController.h"
 #import <WebKit/WebKit.h>
+#import "MTDConfig.h"
 
 @interface MTDController () <WKNavigationDelegate, WKUIDelegate>
 
@@ -30,17 +31,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSFileManager* fm = [NSFileManager new];
-    NSError* err = nil;
-    NSURL* docsurl =
-        [fm URLForDirectory:NSDocumentDirectory
-                   inDomain:NSUserDomainMask appropriateForURL:nil
-                     create:YES error:&err];
-    // error checking omitted
-    NSURL* myfolder = [docsurl URLByAppendingPathComponent:@"MyTestData"];
-    BOOL ok =
-        [fm createDirectoryAtURL:myfolder
-            withIntermediateDirectories:YES attributes:nil error:&err];
+//    NSFileManager* fm = [NSFileManager new];
+//    NSError* err = nil;
+//    NSURL* docsurl =
+//        [fm URLForDirectory:NSDocumentDirectory
+//                   inDomain:NSUserDomainMask appropriateForURL:nil
+//                     create:YES error:&err];
+//    // error checking omitted
+//    NSURL* myfolder = [docsurl URLByAppendingPathComponent:@"MyTestData"];
+//    BOOL ok =
+//        [fm createDirectoryAtURL:myfolder
+//            withIntermediateDirectories:YES attributes:nil error:&err];
 }
 
 # pragma mark - SETTING
@@ -61,7 +62,7 @@
 - (void)loadLocalPath:(NSString *)url {
     NSString *paths = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, TRUE) firstObject];
     NSLog(@"paths: %@", paths);
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@", paths, url];
+    NSString *filePath = [NSString stringWithFormat:@"%@/%@/%@/index.html", paths, FOLDER_NAME, url];
     NSURL *myURL = [NSURL fileURLWithPath:filePath];
     NSLog(@"myURL: %@", myURL);
     [_webView loadFileURL:myURL allowingReadAccessToURL:myURL];
@@ -90,8 +91,8 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSURLRequest *myRequest = navigationAction.request;
 //    NSLog(@"decidePolicyForNavigationAction: %@", myRequest.URL.lastPathComponent);
-    NSString *html = [self getDataFromRequest:myRequest];
-    NSLog(@"html: %@", html);
+//    NSString *html = [self getDataFromRequest:myRequest];
+//    NSLog(@"html: %@", html);
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 ////

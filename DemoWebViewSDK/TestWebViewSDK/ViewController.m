@@ -22,11 +22,28 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    MTDController *myVC = [[MTDController alloc] init];
-    [self.navigationController presentViewController:myVC animated:TRUE completion:^{
-        [myVC loadLocalPath:@"TestData/web_2/index2.html"];
-        [MTDUtils downloadFrom:@"https://github.com/baolanlequang/DemoSDK/raw/master/web_1.zip"];
-    }];
+    MTDUtils *myUtils = [[MTDUtils alloc] init];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        //Background Thread
+        [myUtils downloadFrom:@"https://github.com/baolanlequang/DemoSDK/raw/master/web_2.zip" completionHandler:^(NSString * _Nullable webPath, NSError * _Nullable error) {
+            NSLog(@"webPath: %@", webPath);
+            dispatch_async(dispatch_get_main_queue(), ^(void){
+                //Run UI Updates
+                MTDController *myVC = [[MTDController alloc] init];
+                [self.navigationController presentViewController:myVC animated:TRUE completion:^{
+                    [myVC loadLocalPath:webPath];
+                }];
+            });
+            
+            
+        }];
+        
+    });
+    
+    
+
+    
+    
 }
 
 /*
