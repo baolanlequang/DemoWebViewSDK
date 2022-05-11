@@ -24,7 +24,8 @@
     
     MTDController *myVC = [[MTDController alloc] init];
     [self.navigationController presentViewController:myVC animated:TRUE completion:^{
-        [myVC loadLocalPath:@"MyTestData/web_2/index.html"];
+        [myVC loadLocalPath:@"TestData/web_2/index2.html"];
+        [MTDUtils downloadFrom:@"https://github.com/baolanlequang/DemoSDK/raw/master/web_1.zip"];
     }];
 }
 

@@ -52,6 +52,19 @@
 		FA4CE9482827195F00CB5B98 /* bootstrap.js in Resources */ = {isa = PBXBuildFile; fileRef = FA4CE92C2827195F00CB5B98 /* bootstrap.js */; };
 		FA4CE9492827195F00CB5B98 /* jquery-3.4.1.min.js in Resources */ = {isa = PBXBuildFile; fileRef = FA4CE92D2827195F00CB5B98 /* jquery-3.4.1.min.js */; };
 		FA4CE94A2827195F00CB5B98 /* feature.html in Resources */ = {isa = PBXBuildFile; fileRef = FA4CE92E2827195F00CB5B98 /* feature.html */; };
+		FA95F004282C486200F4F8FD /* MTDUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95F002282C486200F4F8FD /* MTDUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA95F005282C486200F4F8FD /* MTDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95F003282C486200F4F8FD /* MTDUtils.m */; };
+		FA95F00A282C50CF00F4F8FD /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = FA95F008282C50CF00F4F8FD /* SSZipArchive.m */; };
+		FA95F00B282C50D000F4F8FD /* SSZipArchive.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95F009282C50CF00F4F8FD /* SSZipArchive.h */; };
+		FA95F016282C50D900F4F8FD /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = FA95F00D282C50D900F4F8FD /* unzip.c */; };
+		FA95F017282C50D900F4F8FD /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = FA95F00E282C50D900F4F8FD /* zip.c */; };
+		FA95F018282C50D900F4F8FD /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = FA95F00F282C50D900F4F8FD /* ioapi.c */; };
+		FA95F019282C50D900F4F8FD /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = FA95F010282C50D900F4F8FD /* mztools.c */; };
+		FA95F01A282C50D900F4F8FD /* crypt.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95F011282C50D900F4F8FD /* crypt.h */; };
+		FA95F01B282C50D900F4F8FD /* zip.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95F012282C50D900F4F8FD /* zip.h */; };
+		FA95F01C282C50D900F4F8FD /* unzip.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95F013282C50D900F4F8FD /* unzip.h */; };
+		FA95F01D282C50D900F4F8FD /* mztools.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95F014282C50D900F4F8FD /* mztools.h */; };
+		FA95F01E282C50D900F4F8FD /* ioapi.h in Headers */ = {isa = PBXBuildFile; fileRef = FA95F015282C50D900F4F8FD /* ioapi.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +165,21 @@
 		FA4CE92C2827195F00CB5B98 /* bootstrap.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.js; sourceTree = "<group>"; };
 		FA4CE92D2827195F00CB5B98 /* jquery-3.4.1.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-3.4.1.min.js"; sourceTree = "<group>"; };
 		FA4CE92E2827195F00CB5B98 /* feature.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = feature.html; sourceTree = "<group>"; };
+		FA95F002282C486200F4F8FD /* MTDUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTDUtils.h; sourceTree = "<group>"; };
+		FA95F003282C486200F4F8FD /* MTDUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTDUtils.m; sourceTree = "<group>"; };
+		FA95F008282C50CF00F4F8FD /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
+		FA95F009282C50CF00F4F8FD /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
+		FA95F00D282C50D900F4F8FD /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		FA95F00E282C50D900F4F8FD /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		FA95F00F282C50D900F4F8FD /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		FA95F010282C50D900F4F8FD /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		FA95F011282C50D900F4F8FD /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		FA95F012282C50D900F4F8FD /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		FA95F013282C50D900F4F8FD /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		FA95F014282C50D900F4F8FD /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		FA95F015282C50D900F4F8FD /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		FA95F01F282C510900F4F8FD /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		FA95F020282C511800F4F8FD /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/lib/libz.1.1.3.tbd; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +251,10 @@
 		FA4CE8A62827081F00CB5B98 /* DemoWebViewSDK */ = {
 			isa = PBXGroup;
 			children = (
+				FA95F006282C50A500F4F8FD /* ThirdParties */,
 				FA4CE8A72827081F00CB5B98 /* DemoWebViewSDK.h */,
+				FA95F002282C486200F4F8FD /* MTDUtils.h */,
+				FA95F003282C486200F4F8FD /* MTDUtils.m */,
 				FA4CE8F9282709D000CB5B98 /* MTDController.h */,
 				FA4CE8FA282709D000CB5B98 /* MTDController.m */,
 			);
@@ -277,6 +308,8 @@
 		FA4CE8FD28270A2900CB5B98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA95F020282C511800F4F8FD /* libz.1.1.3.tbd */,
+				FA95F01F282C510900F4F8FD /* libz.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -349,6 +382,40 @@
 			path = js;
 			sourceTree = "<group>";
 		};
+		FA95F006282C50A500F4F8FD /* ThirdParties */ = {
+			isa = PBXGroup;
+			children = (
+				FA95F007282C50B100F4F8FD /* Zip */,
+			);
+			path = ThirdParties;
+			sourceTree = "<group>";
+		};
+		FA95F007282C50B100F4F8FD /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+				FA95F00C282C50D900F4F8FD /* minizip */,
+				FA95F009282C50CF00F4F8FD /* SSZipArchive.h */,
+				FA95F008282C50CF00F4F8FD /* SSZipArchive.m */,
+			);
+			path = Zip;
+			sourceTree = "<group>";
+		};
+		FA95F00C282C50D900F4F8FD /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				FA95F00D282C50D900F4F8FD /* unzip.c */,
+				FA95F00E282C50D900F4F8FD /* zip.c */,
+				FA95F00F282C50D900F4F8FD /* ioapi.c */,
+				FA95F010282C50D900F4F8FD /* mztools.c */,
+				FA95F011282C50D900F4F8FD /* crypt.h */,
+				FA95F012282C50D900F4F8FD /* zip.h */,
+				FA95F013282C50D900F4F8FD /* unzip.h */,
+				FA95F014282C50D900F4F8FD /* mztools.h */,
+				FA95F015282C50D900F4F8FD /* ioapi.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -356,8 +423,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA95F01B282C50D900F4F8FD /* zip.h in Headers */,
 				FA4CE8FB282709D000CB5B98 /* MTDController.h in Headers */,
+				FA95F01C282C50D900F4F8FD /* unzip.h in Headers */,
+				FA95F01E282C50D900F4F8FD /* ioapi.h in Headers */,
 				FA4CE8B32827081F00CB5B98 /* DemoWebViewSDK.h in Headers */,
+				FA95F004282C486200F4F8FD /* MTDUtils.h in Headers */,
+				FA95F00B282C50D000F4F8FD /* SSZipArchive.h in Headers */,
+				FA95F01A282C50D900F4F8FD /* crypt.h in Headers */,
+				FA95F01D282C50D900F4F8FD /* mztools.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,7 +653,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA95F018282C50D900F4F8FD /* ioapi.c in Sources */,
 				FA4CE8FC282709D000CB5B98 /* MTDController.m in Sources */,
+				FA95F005282C486200F4F8FD /* MTDUtils.m in Sources */,
+				FA95F016282C50D900F4F8FD /* unzip.c in Sources */,
+				FA95F019282C50D900F4F8FD /* mztools.c in Sources */,
+				FA95F017282C50D900F4F8FD /* zip.c in Sources */,
+				FA95F00A282C50CF00F4F8FD /* SSZipArchive.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
