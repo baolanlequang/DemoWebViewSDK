@@ -61,11 +61,15 @@
 
 - (void)loadLocalPath:(NSString *)url {
     NSString *paths = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, TRUE) firstObject];
-    NSLog(@"paths: %@", paths);
-    NSString *filePath = [NSString stringWithFormat:@"%@/%@/%@/index.html", paths, FOLDER_NAME, url];
-    NSURL *myURL = [NSURL fileURLWithPath:filePath];
-    NSLog(@"myURL: %@", myURL);
-    [_webView loadFileURL:myURL allowingReadAccessToURL:myURL];
+//    NSLog(@"paths: %@", paths);
+    NSURL *folderPath = [[NSURL fileURLWithPath:paths] URLByAppendingPathComponent:FOLDER_NAME isDirectory: YES];
+    folderPath = [folderPath URLByAppendingPathComponent:url isDirectory:YES];
+//    NSLog(@"folderPath: %@", folderPath);
+    NSString *filePath = [folderPath URLByAppendingPathComponent:@"index.html"].path;
+//    NSLog(@"filePath: %@", filePath);
+    NSURL *fileURL = [NSURL fileURLWithPath:filePath isDirectory:NO];
+//    NSLog(@"fileURL: %@", fileURL);
+    [_webView loadFileURL:fileURL allowingReadAccessToURL:folderPath];
 }
 
 # pragma mark - WKNavigationDelegate
@@ -89,7 +93,7 @@
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    NSURLRequest *myRequest = navigationAction.request;
+//    NSURLRequest *myRequest = navigationAction.request;
 //    NSLog(@"decidePolicyForNavigationAction: %@", myRequest.URL.lastPathComponent);
 //    NSString *html = [self getDataFromRequest:myRequest];
 //    NSLog(@"html: %@", html);
