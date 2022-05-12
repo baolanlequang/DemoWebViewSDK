@@ -37,7 +37,7 @@ xcodebuild -create-xcframework \
 -framework './build/DemoWebViewSDK.framework-iphonesimulator.xcarchive/Products/Library/Frameworks/DemoWebViewSDK.framework' \
 -framework './build/DemoWebViewSDK.framework-iphoneos.xcarchive/Products/Library/Frameworks/DemoWebViewSDK.framework' \
 -framework './build/DemoWebViewSDK.framework-catalyst.xcarchive/Products/Library/Frameworks/DemoWebViewSDK.framework' \
--output './build/CalendarControl.xcframework'
+-output './build/DemoWebViewSDK.xcframework'
 ```
 
 ## Release to Cocoapod
