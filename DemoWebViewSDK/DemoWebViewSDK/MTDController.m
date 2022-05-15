@@ -31,17 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    NSFileManager* fm = [NSFileManager new];
-//    NSError* err = nil;
-//    NSURL* docsurl =
-//        [fm URLForDirectory:NSDocumentDirectory
-//                   inDomain:NSUserDomainMask appropriateForURL:nil
-//                     create:YES error:&err];
-//    // error checking omitted
-//    NSURL* myfolder = [docsurl URLByAppendingPathComponent:@"MyTestData"];
-//    BOOL ok =
-//        [fm createDirectoryAtURL:myfolder
-//            withIntermediateDirectories:YES attributes:nil error:&err];
 }
 
 # pragma mark - SETTING

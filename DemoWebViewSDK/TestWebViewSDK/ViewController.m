@@ -25,17 +25,29 @@
     MTDUtils *myUtils = [[MTDUtils alloc] init];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
         //Background Thread
-        [myUtils downloadFrom:@"https://github.com/baolanlequang/DemoSDK/raw/master/web_2.zip" completionHandler:^(NSString * _Nullable webPath, NSError * _Nullable error) {
-            NSLog(@"webPath: %@", webPath);
-            dispatch_async(dispatch_get_main_queue(), ^(void){
-                //Run UI Updates
-                MTDController *myVC = [[MTDController alloc] init];
-                [self.navigationController presentViewController:myVC animated:TRUE completion:^{
-                    [myVC loadLocalPath:webPath];
-                }];
-            });
-            
-            
+//        [myUtils downloadFrom:@"https://github.com/baolanlequang/DemoSDK/raw/master/web_2.zip" completionHandler:^(NSString * _Nullable webPath, NSError * _Nullable error) {
+//            NSLog(@"webPath: %@", webPath);
+//            dispatch_async(dispatch_get_main_queue(), ^(void){
+//                //Run UI Updates
+//                MTDController *myVC = [[MTDController alloc] init];
+//                [self.navigationController presentViewController:myVC animated:TRUE completion:^{
+//                    [myVC loadLocalPath:webPath];
+//                }];
+//            });
+//        }];
+        
+        [myUtils downloadFrom:@"https://github.com/baolanlequang/DemoSDK/raw/master/web_2.zip" progressHandler:^(long entryNumber, long total) {
+            NSLog(@"entry: %ld, total: %ld", entryNumber, total);
+        } completionHandler:^(NSString * _Nullable webPath, BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                dispatch_async(dispatch_get_main_queue(), ^(void){
+                    //Run UI Updates
+                    MTDController *myVC = [[MTDController alloc] init];
+                    [self.navigationController presentViewController:myVC animated:TRUE completion:^{
+                        [myVC loadLocalPath:webPath];
+                    }];
+                });
+            }
         }];
         
     });
