@@ -11,8 +11,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MTDUtils : NSObject
 
-- (void)downloadFrom:(NSString *)url completionHandler:(void (^)(NSString * _Nullable webPath, NSError * _Nullable error))downloadCompletionHandler;
-- (void)downloadFrom:(NSString *)url progressHandler:(void (^_Nullable)(long entryNumber, long total))progressHandler completionHandler:(void (^)(NSString * _Nullable webPath, BOOL succeeded, NSError * _Nullable error))downloadCompletionHandler;
+- (void)downloadFrom:(NSString *)url
+    downloadProgress:(void (^_Nullable)(float progress))downloadProgressHandler
+       upzipProgress:(void (^_Nullable)(float progress))upzipProgressHandler
+   completionHandler:(void (^)(NSString * _Nullable webPath, BOOL succeeded, NSError * _Nullable error))downloadCompletionHandler;
 
 @end
 

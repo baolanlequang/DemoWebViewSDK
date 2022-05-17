@@ -68,74 +68,19 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     NSLog(@"didFinishNavigation");
-    [webView evaluateJavaScript:@"document.documentElement.outerHTML" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-//        NSLog(@"result: %@", result);
-    }];
-    
-//    webView.evaluateJavaScript("document.documentElement.outerHTML", completionHandler: { result, error in
-//          if let datHtml = result as? String {
-//             print(datHtml)
-//             // parse datHtml here
-//             }
-//          } )
-//        }
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-//    NSURLRequest *myRequest = navigationAction.request;
-//    NSLog(@"decidePolicyForNavigationAction: %@", myRequest.URL.lastPathComponent);
-//    NSString *html = [self getDataFromRequest:myRequest];
-//    NSLog(@"html: %@", html);
     decisionHandler(WKNavigationActionPolicyAllow);
 }
-////
-//- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
-////    NSURLResponse *myRespone = navigationResponse.response;
-////    NSLog(@"decidePolicyForNavigationResponse: %@", myRespone.URL.lastPathComponent);
-//    decisionHandler(WKNavigationResponsePolicyAllow);
-//}
 
 # pragma mark - WKUIDelegate
 - (void)webViewDidClose:(WKWebView *)webView {
-    NSLog(@"WKUIDelegate");
+
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     NSLog(@"err: %@", error);
 }
-
-- (NSString *) getDataFrom:(NSString *)url{
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setHTTPMethod:@"GET"];
-    [request setURL:[NSURL URLWithString:url]];
-
-    NSError *error = nil;
-    NSHTTPURLResponse *responseCode = nil;
-
-    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
-
-    if([responseCode statusCode] != 200){
-        NSLog(@"Error getting %@, HTTP status code %i", url, [responseCode statusCode]);
-        return nil;
-    }
-
-    return [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
-}
-
-- (NSString *) getDataFromRequest:(NSMutableURLRequest *)request {
-    NSError *error = nil;
-    NSHTTPURLResponse *responseCode = nil;
-
-    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
-
-    if([responseCode statusCode] != 200){
-        NSLog(@"Error getting, HTTP status code %i", [responseCode statusCode]);
-        return nil;
-    }
-
-    return [[NSString alloc] initWithData:oResponseData encoding:NSUTF8StringEncoding];
-}
-
-
 
 @end

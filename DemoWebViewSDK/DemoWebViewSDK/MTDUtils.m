@@ -8,24 +8,33 @@
 #import "MTDUtils.h"
 #import "ThirdParties/Zip/SSZipArchive.h"
 #import "MTDConfig.h"
+#import "ThirdParties/AFNetworking/AFNetworking.h"
 
 @interface MTDUtils ()
 
-@property (copy, nonatomic) void (^downloadCompletionHandler)(NSString * _Nullable webPath, NSError * _Nullable error);
 @property (copy, nonatomic) NSString *zipFileName;
 
 @end
 
 @implementation MTDUtils
 
-- (void)downloadFrom:(NSString *)url completionHandler:(void (^)(NSString * _Nullable webPath, NSError * _Nullable error))downloadCompletionHandler {
-    _downloadCompletionHandler = downloadCompletionHandler;
+- (void)downloadFrom:(NSString *)url downloadProgress:(void (^)(float))downloadProgressHandler upzipProgress:(void (^)(float))upzipProgressHandler completionHandler:(void (^)(NSString * _Nullable, BOOL, NSError * _Nullable))downloadCompletionHandler {
     NSURL *urlObj = [NSURL URLWithString:url];
     _zipFileName = [self getFileNameFrom:urlObj];
     if (![urlObj isEqual:nil]) {
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:urlObj];
-        NSURLSessionDownloadTask *downloadTask = [[NSURLSession sharedSession] downloadTaskWithRequest:urlRequest completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (![location isEqual:nil]) {
+        
+        NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+        AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+        
+        NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:urlRequest progress:^(NSProgress * _Nonnull downloadProgress) {
+            downloadProgressHandler(downloadProgress.fractionCompleted);
+        } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+            NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+            return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+        } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
+//            NSLog(@"File downloaded to: %@", filePath);
+            if (![filePath isEqual:nil]) {
                 @try {
                     NSFileManager* fm = [NSFileManager new];
                     NSError* err = nil;
@@ -33,51 +42,20 @@
                         [fm URLForDirectory:NSDocumentDirectory
                                    inDomain:NSUserDomainMask appropriateForURL:nil
                                      create:YES error:&err];
-                    NSURL* myfolder = [docsurl URLByAppendingPathComponent:location.lastPathComponent];
-                    [fm moveItemAtURL:location toURL:myfolder error:&err];
+                    NSURL* myfolder = [docsurl URLByAppendingPathComponent:filePath.lastPathComponent];
+                    [fm moveItemAtURL:filePath toURL:myfolder error:&err];
                     NSString *zipPath = myfolder.path;
                     NSString *destinationPath = [NSString stringWithFormat:@"%@/%@/", docsurl.path, FOLDER_NAME];
-                    [SSZipArchive unzipFileAtPath:zipPath toDestination:destinationPath overwrite:YES password:@"" error:&error delegate:self];
-                    
-                } @catch (NSException *exception) {
-                    NSLog(@"exception: %@", exception);
-                }
-            }
-            else {
-                NSLog(@"downloadTaskWithRequest");
-            }
-        }];
-        [downloadTask resume];
-    }
-}
-
-- (void)downloadFrom:(NSString *)url progressHandler:(void (^)(long, long))progressHandler completionHandler:(void (^)(NSString * _Nullable, BOOL succeeded, NSError * _Nullable error))downloadCompletionHandler {
-    NSURL *urlObj = [NSURL URLWithString:url];
-    _zipFileName = [self getFileNameFrom:urlObj];
-    if (![urlObj isEqual:nil]) {
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:urlObj];
-        NSURLSessionDownloadTask *downloadTask = [[NSURLSession sharedSession] downloadTaskWithRequest:urlRequest completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (![location isEqual:nil]) {
-                @try {
-                    NSFileManager* fm = [NSFileManager new];
-                    NSError* err = nil;
-                    NSURL* docsurl =
-                        [fm URLForDirectory:NSDocumentDirectory
-                                   inDomain:NSUserDomainMask appropriateForURL:nil
-                                     create:YES error:&err];
-                    NSURL* myfolder = [docsurl URLByAppendingPathComponent:location.lastPathComponent];
-                    [fm moveItemAtURL:location toURL:myfolder error:&err];
-                    NSString *zipPath = myfolder.path;
-                    NSString *destinationPath = [NSString stringWithFormat:@"%@/%@/", docsurl.path, FOLDER_NAME];
-//                    [SSZipArchive unzipFileAtPath:zipPath toDestination:destinationPath overwrite:YES password:@"" error:&error delegate:self];
                     [SSZipArchive unzipFileAtPath:zipPath toDestination:destinationPath overwrite:YES password:nil progressHandler:^(NSString * _Nonnull entry, unz_file_info zipInfo, long entryNumber, long total) {
-                        progressHandler(entryNumber, total);
+                        float progress = (float)entryNumber/total;
+                        upzipProgressHandler(progress);
                     } completionHandler:^(NSString * _Nonnull path, BOOL succeeded, NSError * _Nullable error) {
-                        downloadCompletionHandler(path, succeeded, error);
+                        downloadCompletionHandler(self.zipFileName, succeeded, error);
                     }];
-                    
+
                 } @catch (NSException *exception) {
-                    NSLog(@"exception: %@", exception);
+                    NSError *err = [NSError errorWithDomain:@"MetaNode" code:-100 userInfo:exception.userInfo];
+                    downloadCompletionHandler(nil, false, err);
                 }
             }
             else {
@@ -96,10 +74,5 @@
     }
     return nil;
 }
-
-//# pragma mark - SSZipArchiveDelegate
-//- (void)zipArchiveDidUnzipArchiveAtPath:(NSString *)path zipInfo:(unz_global_info)zipInfo unzippedPath:(NSString *)unzippedPath {
-//    _downloadCompletionHandler(_zipFileName, nil);
-//}
 
 @end

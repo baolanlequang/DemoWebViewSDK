@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA15AF312832F6A200179928 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = FA15AF232832F6A200179928 /* AFSecurityPolicy.h */; };
+		FA15AF322832F6A200179928 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA15AF242832F6A200179928 /* AFNetworkReachabilityManager.h */; };
+		FA15AF332832F6A200179928 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA15AF252832F6A200179928 /* AFURLSessionManager.h */; };
+		FA15AF342832F6A200179928 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = FA15AF262832F6A200179928 /* AFURLRequestSerialization.h */; };
+		FA15AF352832F6A200179928 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15AF272832F6A200179928 /* AFURLResponseSerialization.m */; };
+		FA15AF362832F6A200179928 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15AF282832F6A200179928 /* AFHTTPSessionManager.m */; };
+		FA15AF372832F6A200179928 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = FA15AF292832F6A200179928 /* AFURLResponseSerialization.h */; };
+		FA15AF382832F6A200179928 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15AF2A2832F6A200179928 /* AFURLSessionManager.m */; };
+		FA15AF392832F6A200179928 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15AF2B2832F6A200179928 /* AFURLRequestSerialization.m */; };
+		FA15AF3A2832F6A200179928 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = FA15AF2C2832F6A200179928 /* AFNetworking.h */; };
+		FA15AF3B2832F6A200179928 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15AF2D2832F6A200179928 /* AFNetworkReachabilityManager.m */; };
+		FA15AF3C2832F6A200179928 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA15AF2E2832F6A200179928 /* AFSecurityPolicy.m */; };
+		FA15AF3D2832F6A200179928 /* AFCompatibilityMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = FA15AF2F2832F6A200179928 /* AFCompatibilityMacros.h */; };
+		FA15AF3E2832F6A200179928 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FA15AF302832F6A200179928 /* AFHTTPSessionManager.h */; };
 		FA4A54752831392A009D9E57 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4A54532831392A009D9E57 /* SSZipArchive.m */; };
 		FA4A54762831392A009D9E57 /* mz_strm_os_posix.c in Sources */ = {isa = PBXBuildFile; fileRef = FA4A54552831392A009D9E57 /* mz_strm_os_posix.c */; };
 		FA4A54772831392A009D9E57 /* mz_strm_pkcrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = FA4A54562831392A009D9E57 /* mz_strm_pkcrypt.c */; };
@@ -150,6 +164,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA15AF232832F6A200179928 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		FA15AF242832F6A200179928 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		FA15AF252832F6A200179928 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		FA15AF262832F6A200179928 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		FA15AF272832F6A200179928 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		FA15AF282832F6A200179928 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		FA15AF292832F6A200179928 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		FA15AF2A2832F6A200179928 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		FA15AF2B2832F6A200179928 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		FA15AF2C2832F6A200179928 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		FA15AF2D2832F6A200179928 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		FA15AF2E2832F6A200179928 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		FA15AF2F2832F6A200179928 /* AFCompatibilityMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompatibilityMacros.h; sourceTree = "<group>"; };
+		FA15AF302832F6A200179928 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		FA4A54532831392A009D9E57 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		FA4A54552831392A009D9E57 /* mz_strm_os_posix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_os_posix.c; sourceTree = "<group>"; };
 		FA4A54562831392A009D9E57 /* mz_strm_pkcrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mz_strm_pkcrypt.c; sourceTree = "<group>"; };
@@ -288,6 +316,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA15AF222832F6A200179928 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				FA15AF232832F6A200179928 /* AFSecurityPolicy.h */,
+				FA15AF242832F6A200179928 /* AFNetworkReachabilityManager.h */,
+				FA15AF252832F6A200179928 /* AFURLSessionManager.h */,
+				FA15AF262832F6A200179928 /* AFURLRequestSerialization.h */,
+				FA15AF272832F6A200179928 /* AFURLResponseSerialization.m */,
+				FA15AF282832F6A200179928 /* AFHTTPSessionManager.m */,
+				FA15AF292832F6A200179928 /* AFURLResponseSerialization.h */,
+				FA15AF2A2832F6A200179928 /* AFURLSessionManager.m */,
+				FA15AF2B2832F6A200179928 /* AFURLRequestSerialization.m */,
+				FA15AF2C2832F6A200179928 /* AFNetworking.h */,
+				FA15AF2D2832F6A200179928 /* AFNetworkReachabilityManager.m */,
+				FA15AF2E2832F6A200179928 /* AFSecurityPolicy.m */,
+				FA15AF2F2832F6A200179928 /* AFCompatibilityMacros.h */,
+				FA15AF302832F6A200179928 /* AFHTTPSessionManager.h */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
 		FA4A54542831392A009D9E57 /* minizip */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +539,7 @@
 		FA95F006282C50A500F4F8FD /* ThirdParties */ = {
 			isa = PBXGroup;
 			children = (
+				FA15AF222832F6A200179928 /* AFNetworking */,
 				FA95F007282C50B100F4F8FD /* Zip */,
 			);
 			path = ThirdParties;
@@ -513,6 +563,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA15AF332832F6A200179928 /* AFURLSessionManager.h in Headers */,
+				FA15AF322832F6A200179928 /* AFNetworkReachabilityManager.h in Headers */,
 				FA4A54862831392A009D9E57 /* mz_strm_zlib.h in Headers */,
 				FA4A548D2831392A009D9E57 /* mz.h in Headers */,
 				FA4CE8FB282709D000CB5B98 /* MTDController.h in Headers */,
@@ -520,13 +572,19 @@
 				FA4A548B2831392A009D9E57 /* mz_zip.h in Headers */,
 				FA4A54822831392A009D9E57 /* mz_strm.h in Headers */,
 				FA4A54782831392A009D9E57 /* mz_strm_wzaes.h in Headers */,
+				FA15AF372832F6A200179928 /* AFURLResponseSerialization.h in Headers */,
 				FA4A54882831392A009D9E57 /* mz_strm_pkcrypt.h in Headers */,
+				FA15AF3D2832F6A200179928 /* AFCompatibilityMacros.h in Headers */,
 				FA4A54902831392A009D9E57 /* mz_crypt.h in Headers */,
 				FA4A54802831392A009D9E57 /* mz_strm_buf.h in Headers */,
 				FA4A54952831392A009D9E57 /* SSZipCommon.h in Headers */,
+				FA15AF312832F6A200179928 /* AFSecurityPolicy.h in Headers */,
 				FA4A547C2831392A009D9E57 /* mz_os.h in Headers */,
+				FA15AF3E2832F6A200179928 /* AFHTTPSessionManager.h in Headers */,
 				FA95F004282C486200F4F8FD /* MTDUtils.h in Headers */,
+				FA15AF342832F6A200179928 /* AFURLRequestSerialization.h in Headers */,
 				FA4A54932831392A009D9E57 /* mz_strm_os.h in Headers */,
+				FA15AF3A2832F6A200179928 /* AFNetworking.h in Headers */,
 				FA4A54942831392A009D9E57 /* SSZipArchive.h in Headers */,
 				FA4A54792831392A009D9E57 /* mz_compat.h in Headers */,
 				FA4A54912831392A009D9E57 /* mz_strm_mem.h in Headers */,
@@ -758,15 +816,21 @@
 				FA4A548C2831392A009D9E57 /* mz_os_posix.c in Sources */,
 				FA4A547B2831392A009D9E57 /* mz_zip.c in Sources */,
 				FA4A54922831392A009D9E57 /* mz_strm.c in Sources */,
+				FA15AF382832F6A200179928 /* AFURLSessionManager.m in Sources */,
+				FA15AF3C2832F6A200179928 /* AFSecurityPolicy.m in Sources */,
 				FA4A54852831392A009D9E57 /* mz_strm_wzaes.c in Sources */,
 				FA4CE8FC282709D000CB5B98 /* MTDController.m in Sources */,
 				FA4A54872831392A009D9E57 /* mz_compat.c in Sources */,
+				FA15AF392832F6A200179928 /* AFURLRequestSerialization.m in Sources */,
 				FA4A548A2831392A009D9E57 /* mz_os.c in Sources */,
+				FA15AF362832F6A200179928 /* AFHTTPSessionManager.m in Sources */,
 				FA4A548E2831392A009D9E57 /* mz_strm_buf.c in Sources */,
 				FA4A54772831392A009D9E57 /* mz_strm_pkcrypt.c in Sources */,
+				FA15AF352832F6A200179928 /* AFURLResponseSerialization.m in Sources */,
 				FA4A548F2831392A009D9E57 /* mz_strm_split.c in Sources */,
 				FA4A54842831392A009D9E57 /* mz_crypt.c in Sources */,
 				FA95F005282C486200F4F8FD /* MTDUtils.m in Sources */,
+				FA15AF3B2832F6A200179928 /* AFNetworkReachabilityManager.m in Sources */,
 				FA4A54812831392A009D9E57 /* mz_crypt_apple.c in Sources */,
 				FA4A547A2831392A009D9E57 /* mz_strm_zlib.c in Sources */,
 				FA4A547E2831392A009D9E57 /* mz_zip_rw.c in Sources */,
